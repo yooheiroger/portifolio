@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+/* utilizar porcentagem % para o tamanho das coisas como imagem texto os botoes sempre sera relativo com  o elemento pai */
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22d4fd;
+    --cor-hover: #272727;
+
+    --font-primaria: "Krona One", sans-serif;
+    --font-secudaria: "Montserrat", sans-serif;
+    /* variaveis do cess se declara dessa forma e se utiliza com var(--cor-primaria) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    /* height: 100vh; */
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+
+}
+
+.cabecalho {
+    /* padding: ;serve para criar espaco pode ser da margem ou de outro elemento que estaja do lado de fora do padding*/
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    /* display sempre colocar no elemento pai elento cointeiner aquele que voce quer modificar o posicionamento */
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--font-secudaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+
+}
+
+
+.apresentacao {
+    margin: 10% 15%;
+    /* essas porcentagens significam que  10% de espaco superior e inferior e 15% laterais */ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    /* width sserve para dizer o espaço que o apresentação__conteudo vai ocupar do elemento pai que é apresentação*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--font-primaria);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--font-secudaria);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--font-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    background-color: var(--cor-primaria);
+    border: 2px solid var(--cor-terciaria);
+    /* comando acima o solid significa que a borda ficara com essa cor, pode-se usar dotted no lugar do solid */
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-secudaria);
+}
+
+.apresentacao__links__navegacao:hover {
+    /* hover serve para indicar que algo esta sendo alterado quando o mause passa por cima, pode ser pela classe ou pela tag */
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-hover);
+    font-size: 2.25rem;
+    font-family: var(--font-secudaria);
+    font-weight: 400;
+    padding: 24px;
+    text-align: center;
+
+}
+
+@media (max-width: 1200px) {
+
+    .cabecalho{
+        padding: 10%;
+
+    }
+
+    .cabecalho__menu{
+        /* quando usar o media, os elementos que ja estavam no cabecalho menu ele ja vem entao nao precisa colocar o display flex so o justify content para centralizar o menu de navegação */
+        justify-content: center;
+    }
+
+      /* media serve para criar uma condição no caso o tamanho maximo da tela de largura se for maior que 1200px aplica o padrao normal senao aplica o que esta dentro do media*/
+    .apresentacao {
+        flex-direction: column-reverse;
+        /*  flex direction colum reverse serve para inverter a ordem das coisas*/
+   
+    }
+
+    .apresentacao__conteudo{
+        width: auto
+        /* função width auto serve para ocupar automaticamente o espaco do elemento pai, se colocar 0 no valor do width ela para de existir e quebra o conteudo escrito */
+    }
+}
